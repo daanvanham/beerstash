@@ -1,0 +1,35 @@
+@use 'sass:color';
+
+@use '@material/theme/color-palette';
+
+// Svelte Colors!
+@use '@material/theme/index' as theme with (
+  $primary: #022B3A,
+  $secondary: #1F7A8C,
+  $surface: #fff,
+  $background: #fff,
+  $error: color-palette.$red-900,
+);
+
+html,
+body {
+  background-color: theme.$surface;
+  color: theme.$on-surface;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  color: #022b3a;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:visited {
+  color: color.scale(#022b3a, $lightness: -35%);
+}
+
+strong {
+  opacity: 0.8;
+}
