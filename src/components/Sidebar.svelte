@@ -1,10 +1,9 @@
 <script>
   import { fly } from "svelte/transition";
-  import { Link } from "svelte-routing";
-
-  import Fab, { Icon } from "@smui/fab";
   import IconButton from "@smui/icon-button";
+
   import Date from "./Date.svelte";
+  import Dynamic from "../components/Dynamic.svelte";
 
   export let visible;
 </script>
@@ -100,27 +99,19 @@
         {visible.creator}
         <br />
         <strong>op:</strong>
-        <Date string={visible.created} />
+        <Date string={visible.placed_on} />
       </p>
 
       <h3>Coordinaten</h3>
       <p>{visible.coordinates}</p>
 
-      <!-- <h3>Beschrijving</h3>
-      <div class="description">
-        {@html visible.description}
-      </div> -->
+      <h3>Beschrijving</h3>
+      {#each visible.description as component}
+        <Dynamic {component} />
+      {/each}
 
-      <!-- <h3>Hint</h3>
-      <p>{visible.hint}</p> -->
-    </div>
-
-    <div class="go-to">
-      <Link to={`stash/${visible.code}`}>
-        <Fab>
-          <Icon class="material-icons">arrow_forward</Icon>
-        </Fab>
-      </Link>
+      <h3>Hint</h3>
+      <p>{visible.hint}</p>
     </div>
   </div>
 {/if}
