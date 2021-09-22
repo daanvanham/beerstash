@@ -10,12 +10,13 @@
 <style>
   img {
     max-width: 300px;
+    cursor: pointer;
   }
 
   :global(.modal) img {
-    max-width: none;
-    max-height: 100%;
-    height: 80vh;
+    max-width: 80vw;
+    max-height: 80vh;
+    float: left;
   }
 </style>
 
