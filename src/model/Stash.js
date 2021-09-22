@@ -77,10 +77,10 @@ class Stash {
         return creator;
     }
 
-    get created() {
-        const { _created_on } = storage.get(this);
+    get placed_on() {
+        const { placed_on } = storage.get(this);
 
-        return _created_on;
+        return placed_on;
     }
 
     static from(potential) {

@@ -8,12 +8,30 @@ query stashes {
             code
             type
             title
+            hint
             coordinates
             location {
                 latitude
                 longitude
             }
-            _created_on
+            description {
+                ... on Text {
+                    _id
+                    _type
+                    body
+                    format
+                }
+                ... on Assets {
+                    _type
+                    items {
+                        _id
+                        cdn_files {
+                            url
+                        }
+                    }
+                }
+            }
+            placed_on
             creator
         }
     }
