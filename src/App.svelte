@@ -11,8 +11,11 @@
   import Detail from "./pages/Detail.svelte";
   import Log from "./pages/Log.svelte";
 
-  const authToken =
-    "609f76782a5f9bcf23c4b3ce8e5e9a1938b0beca7beab79c1f5abca26d40900f";
+  export let url = "";
+  export let ready = false;
+
+  export let authToken;
+  export let googleAPIkey;
 
   function createApolloClient(authToken) {
     const cache = new InMemoryCache();
@@ -26,9 +29,6 @@
 
     return client;
   }
-
-  export let url = "";
-  export let ready = false;
 
   const client = createApolloClient(authToken);
 
@@ -57,7 +57,7 @@
   <script
     defer
     async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArw3AOLVY6obsfuaUcrZYB-ciujwx0VKk&callback=initMap">
+    src={`https://maps.googleapis.com/maps/api/js?key=${googleAPIkey}&callback=initMap`}>
 
   </script>
 </svelte:head>
