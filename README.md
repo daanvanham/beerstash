@@ -4,9 +4,9 @@ A game inspired by Geocaching, ideal for a birthday present :) One hides "stashe
 
 ## TODO
 
-- Documentation for Prepr models
-- Change it to use SvelteKit
-- Use environment variables for the tokens/keys
+- [ ] Documentation for Prepr models
+- [ ] Change it to use SvelteKit
+- [ ] Use environment variables for the tokens/keys
 
 ## Usage
 
